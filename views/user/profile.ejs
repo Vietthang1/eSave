@@ -1,0 +1,22 @@
+<% layout('../layouts/basic_layout') %>
+<div class="row">
+	<div class="col-lg-3">
+		<div class="avatar" style="margin-bottom:5px;">
+			<a href="#"><img src="<%= (user!==undefined)?user.avatarUrl:session.currentUser.avatarUrl %>" class="img-rounded" /></a>
+		</div>
+		<div class="control">
+			<button type="button" class="btn btn-success btn-block"><i class="fa fa-plus-square fa-2"></i> Kết bạn</button>
+			<button type="button" class="btn btn-primary btn-block"><i class="fa fa-envelope-o"></i> Gửi tin nhắn</button>
+		</div>
+	</div>
+	<div class="col-lg-9">
+		<h3>Tô Việt Anh</h3>
+		<div>Email: <%= (user!==undefined)?user.email:session.currentUser.email %></div>
+		<div>Địa chỉ: Hà Nội, Việt Nam</div>
+		<div>Ngày sinh: 27/04/1990</div>
+		<div>Cung hoàng đạo: Kim ngưu</div>
+		<div>MBTI: INTJ</div>
+		<div>Sở thích: Bóng đá, programming, truyện tranh</div>
+		<div>Ngày tham gia: 11/10/2013</div>
+	</div>
+</div>

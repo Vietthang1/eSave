@@ -1,0 +1,22 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node-dev app.js"
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "ejs": "*",
+    "ejs-locals":"*",
+    "mongoose":"3.6.18",
+    "serialport": "*",
+    "async":"*",
+    "socket.io":"*",
+    "underscore":"*",
+    "aws-sdk":"*",
+    "moment":"*",
+    "connect-flash":"*",
+    "qs":"*"
+  }
+}

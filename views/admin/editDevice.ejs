@@ -1,0 +1,20 @@
+<% layout('../layouts/basic_layout') %>
+
+<h2>Edit device</h2>
+<form id='editDevice' role="form" action="/admin/editDevice" method="post">
+	<input type="hidden" class="form-control" name='_id' value="<%=(device._id!==undefined)?device._id:''%>">
+  <div class="form-group">
+    <label for="id">Id</label>
+    <input type="" class="form-control" name='id' id="id" value="<%=(device.id!==undefined)?device.id:''%>">
+  </div>
+  <div class="form-group">
+    <label for="location">Location</label>
+    <select form='editDevice' name='location' >
+    	<%for(var i = 0;i<locations.length;i++){%>
+    		<option <%=(device.location!==undefined&&locations[i].name==device.location.name)?'selected':'' %> value="<%=locations[i]._id%>"><%=locations[i].name%></option>
+    	<%}%>
+    	}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

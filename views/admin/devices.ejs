@@ -1,0 +1,29 @@
+<% layout('../layouts/basic_layout') %>
+<% include ../partials/adminNav %>
+<a href="/admin/addDevice" class="btn btn-success" style="margin-top:15px;">Add new device</a>
+<table class="table table-bordered" style="margin-top:15px;">
+	<thead>
+		<tr>
+			<th>device id</th>
+			<th>location</th>
+			<th>division</th>
+			<th>actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%for(var i = 0;i<devices.length;i++){
+			%>
+			<tr>
+				<td><%=devices[i].id%></td>
+				<td><%=devices[i].location.name%></td>
+				<td><%=devices[i].location.division%></td>
+				<td>
+					<a href="/admin/editDevice/<%=devices[i]._id%>">edit</a> | 
+					<a href='/admin/deleteDevice/<%=devices[i]._id%>'>delete</a>
+				</td>
+			</tr>
+			<%
+			}%>
+	</tbody>
+</table>
+<a href="/admin/addDevice" class="btn btn-success">Add new device</a>

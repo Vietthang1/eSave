@@ -1,0 +1,119 @@
+body,h1, h2, h3, h4, h5, h6 {
+  font-family: 'helvetica', cursive;
+}
+
+.blank_layout .content{
+	clear: both;
+	overflow: auto;
+	margin: 140px 0px 160px 0px;
+}
+.blank_layout{
+	background-color: #F6F4F0;
+}
+
+img{
+	max-width: 100%;
+}
+/*bootstrap-override - begin*/
+.basic_layout .content,.basic_layout .sidebar{
+	padding-top: 50px;
+	min-height: 600px;
+}
+.custom-nav{
+	background: #385673;
+	border: none;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
+	background: #2C4762;
+}
+.navbar-inverse .navbar-nav>li>a{
+	color: #C1C9C7;
+}
+.navbar-inverse .navbar-brand{
+	color: white;
+}
+.badge{
+	font-weight: normal;
+	margin-top: 10px;
+}
+.list-group-item{
+	padding: 5px;
+}
+textarea{
+	resize:none;
+}
+.navbar-nav > li > a,.navbar-header > a{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.navbar{
+	min-height: 30px;
+}
+.col-lg-1.full{
+	padding: 0px !important;
+}
+/*bootstrap-override - end*/
+/*.text-input-group -  begin*/
+.text-input-group input{
+	border-radius: 0px;
+	border-top: none;
+}
+.text-input-group input:first-child{
+	border-radius: 4px 4px 0px 0px;
+	border-top: 1px solid #cccccc;
+}
+
+.text-input-group input:last-child{
+	border-radius: 0px 0px 4px 4px;
+}
+.panel-success > .panel-heading {
+    background-color: #097609;
+    border-color: #075907;
+    color: #FFFFFF;
+}
+.panel-success {
+    border-color: #075907;
+}
+.make-switch{
+	max-height: 30px !important;
+}
+/*.text-input-group -  end*/
+/*tinymce-patch - begin*/
+#mce_26,#mce_17{
+	display: none;
+}
+/*tinymce-patch - end*/
+/*ace editor - begin*/
+#testcode{
+	position: relative;
+	height: 300px;
+	border: 1px solid #DDDDDD;
+	border-radius: 6px;
+	margin-bottom: 15px;
+}
+#testcode #editor { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/*ace editor - end*/
+.hidden{
+	display: none;
+}
+.temp{
+	margin-bottom: 5px;
+	text-align: center;
+	overflow: hidden;
+	max-height: 60px;
+}
+.temp .temp-number{
+	font-size: x-large;
+}
+.temp i{
+	cursor: pointer;
+}
+.temp i:hover{
+	color:#5CB85C;
+}

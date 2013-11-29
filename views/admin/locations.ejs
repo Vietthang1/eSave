@@ -1,0 +1,27 @@
+<% layout('../layouts/basic_layout') %>
+<% include ../partials/adminNav %>
+<a href="/admin/addLocation" class="btn btn-success" style="margin-top:15px;">Add new location</a>
+<table class="table table-bordered" style="margin-top:15px;">
+	<thead>
+		<tr>
+			<th>Location id</th>
+			<th>Division</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%for(var i = 0;i<locations.length;i++){
+			%>
+			<tr>
+				<td><%=locations[i].name%></td>
+				<td><%=locations[i].division%></td>
+				<td>
+					<a href="/admin/editLocation/<%=locations[i]._name%>">edit</a> | 
+					<a href='/admin/deleteLocation/<%=locations[i]._name%>'>delete</a>
+				</td>
+			</tr>
+			<%
+			}%>
+	</tbody>
+</table>
+<a href="/admin/addLocation" class="btn btn-success">Add new location</a>

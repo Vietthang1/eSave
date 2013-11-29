@@ -1,0 +1,69 @@
+<% layout('layouts/basic_layout') %>
+
+<div ng-controller='DeviceController' ng-init='init()'>
+	
+	<ul class="nav nav-tabs">
+		<li ng-repeat='d in divisions' ng-model='d' class="{{(d.selected)?'active':''}}">
+			<a href="#" ng-click="divisionClick('{{d.text}}')">{{d.text}}</a>
+		</li>
+	</ul>	
+
+	<div id='aircons' class="row" style="margin-top:15px;">
+		<div ng-repeat='dev in devices' class="col-lg-2 {{(dev.visible)?'':'hidden'}}" ng-model='dev'>
+			<div class="panel {{(dev.running)?'panel-success':'panel-default'}}">
+			  <div class="panel-heading">
+			  	<center><label>R{{dev.location.name + ' - ' + dev.id}} <label></center>
+			  </div>
+
+			  <div class="panel-body" style="padding:5px 15px 0px 15px !important;">			  		
+			  		<div class="temp {{dev.id}}">
+			  			<div><img id='loading{{dev.id}}' src = "/img/ajax-loader.gif" style="visibility:hidden"/></div>			  			
+			  			<img src="/img/temp.png" /> 
+			  			<div style="float:right">
+			  				<span class='temp-number'>{{dev.temp}}&degC</span>
+			  				<div style="font-size:1.5em;position:relative;top:-10px;">			  					
+			  					<i d-id={{dev.id}} ng-click="changeTemp(dev.id, -1)" class="fa fa-minus-square"></i>
+			  					<i d-id={{dev.id}} ng-click="changeTemp(dev.id, 1)" class="fa fa-plus-square"></i>
+		  					</div>
+			  			</div>			  			
+			  		</div>
+			  		<div d-id={{dev.id}} class="switch-toggle well" style="">
+						<input id="on{{dev.id}}" name="device{{dev.id}}" type="radio" ng-checked="dev.running">
+						<label ng-click="switchDevice(dev.id,true)" for="on{{dev.id}}" onclick="">On</label>
+
+						<input id="off{{dev.id}}" name="device{{dev.id}}" type="radio" ng-checked="!dev.running">
+						<label ng-click="switchDevice(dev.id,false)" for="off{{dev.id}}" onclick="">Off</label>
+
+						<a class="btn {{(dev.running)?'btn-success':'btn-warning'}}" ></a>
+					</div>
+
+			  		<!--<div>fan -> {{dev.modeFan}}</div>
+			  		<div>choise -> {{dev.choiseMode}}</div>-->
+			  		
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/js/angular/controllers/deviceController.js"></script>
+<script>
+	
+	$('#aircons').on('click', '.fa-minus-square', function() {			
+		setLoadingVisible($(this).attr('d-id'));
+	});	
+
+	$('#aircons').on('click', '.fa-plus-square', function() {				
+		setLoadingVisible($(this).attr('d-id'));
+	});	
+	
+	$('#aircons').on('click', '.switch-toggle.well', function() {		
+		setLoadingVisible($(this).attr('d-id'));
+	});		
+
+	function setLoadingVisible(id) {					
+		var sel = '#loading' + id;
+		$(sel).css('visibility', 'visible');		
+	};
+</script>
+
+
